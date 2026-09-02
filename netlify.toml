@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Runs every 10 minutes: auto check-out after 3h + 90-day data cleanup
+[functions."sweep"]
+  schedule = "*/10 * * * *"
